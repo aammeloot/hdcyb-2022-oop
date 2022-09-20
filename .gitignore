@@ -36,3 +36,4 @@
 *.pdb
 
 .vscode/tasks.json
+.vscode/settings.json
