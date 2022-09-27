@@ -48,6 +48,9 @@ int main(int argc, char const *argv[])
         cout << name << endl;
     }
 
+    // Also initialise on the fly
+
+    vector<string> students2 { "Bryon", "Bradley", "Mikey" };
 
     return 0;
 }
