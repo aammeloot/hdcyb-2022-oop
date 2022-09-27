@@ -3,26 +3,14 @@
 
 using namespace std;
 
-// Input the names
-void inputName(vector<string> &snames)
-{
-    // Input 5 names
-    for (int counter = 0; counter < 5; counter++)
-    {
-        cout << "Enter the name of a student:\n";
-        string sname;
-        cin >> sname;
-        // Add to the vector
-        snames.push_back(sname);
-    }
-}
-
 void displayNames(const vector<string> &snames)
 {   // Roll on all the names and display
+    cout << "===================\n";
     for (string name: snames)
     {
         cout << name << endl;
     }
+    cout << "===================\n";
 }
 
 int searchName(const vector<string> &snames, const string &keyword)
@@ -35,6 +23,21 @@ int searchName(const vector<string> &snames, const string &keyword)
         }
     }
     return NULL;
+}
+
+
+// Input the names
+void inputName(vector<string> &snames)
+{
+    // Input 5 names
+    for (int counter = 0; counter < 5; counter++)
+    {
+        cout << "Enter the name of a student:\n";
+        string sname;
+        cin >> sname;
+        // Add to the vector
+        snames.push_back(sname);
+    }
 }
 
 // Main program
