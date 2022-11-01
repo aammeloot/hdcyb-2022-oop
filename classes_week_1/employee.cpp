@@ -8,6 +8,7 @@
 // State its full (name and salary)
 
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -19,6 +20,12 @@ class Employee
     // public data/methods
 
 public:
+
+    void setSalary(int newSalary)
+    {
+        salary = newSalary;
+    }
+
     int getWages() // Return the wages as an int
     {
         return salary + overtime * rate;
@@ -26,7 +33,7 @@ public:
 
     void displayID()
     {
-        cout << "name: " << name << "wages: " << getWages() << endl; 
+        cout << "name: " << name << " wages: " << getWages() << endl; 
     }
 
     // To create an object we need a function to initialise it
@@ -44,5 +51,24 @@ public:
 
 int main()
 {
+    // Create a couple of employees (in Stack)
+    Employee m("Mikey", 40000, 5, 70);
+    Employee t("Tom", 41500, 4, 70);
+
+    m.displayID();
+    t.displayID();
+
+    // Same this time with modern pointers :) 
+    auto a = make_unique<Employee>("Aurelien", 42000, 0, 0);
+    a->displayID();  // note the difference it uses -> instead of .
+    a->setSalary(50000);
+    a->displayID();
+
+    // Same this time with old skool pointers
+    Employee *b = new Employee("Bryon", 45000, 10, 50);
+    b->displayID();
+    // Remember to clean up after yourself when using pointers
+    delete b;
+
     return 0;
 }
