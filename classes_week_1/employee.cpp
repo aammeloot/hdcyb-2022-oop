@@ -46,6 +46,12 @@ public:
         overtime = anOvertime;
         rate = aRate;
     }
+
+    // Default constructor if the developer is a bit dim and forgets
+    Employee()
+    {
+        Employee("Jeff", 10000, 40, 5);
+    }
 };
 
 
